@@ -32,8 +32,8 @@ studentRouter.get('/:studentId', (req, res, next) => {
 
 studentRouter.post('/', (req, res, next) => {
   Student.create(req.body)
-    .then(createdStudent => createdStudent.setCampus(req.body.campusId))
-    .then(createdStudent => res.status(201).json(createdStudent))
+    .then(createdStudent => Student.findById(createdStudent.id))
+    .then(student => res.status(201).json(student))
     .catch(next);
 });
 
