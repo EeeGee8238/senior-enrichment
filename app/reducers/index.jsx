@@ -1,8 +1,8 @@
 'use strict';
 
 import { combineReducers } from 'redux';
-import students from '../Store/studentStore';
-import campuses from '../Store/campusStore';
+import students from './studentReducer';
+import campuses from './campusReducer';
 
 
 //

@@ -7,8 +7,15 @@ import { connect } from 'react-redux';
 function AllStudents(props) {
   return (
     <div>
-      <h3>Click to add a student</h3>
-      <span>#</span><span>Name</span><span>Campus</span>
+      <div>
+        <Link to={'/students/add'}>
+          <button type="button">+</button>
+          <h3>Click to add a student</h3>
+        </Link>
+      </div>
+      <div>
+        <span>#</span><span>Name</span><span>Campus</span>
+      </div>
       <ol>
         {
           props.students && props.students.map(student =>
@@ -22,6 +29,7 @@ function AllStudents(props) {
 
 
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
     students: state.students
   };

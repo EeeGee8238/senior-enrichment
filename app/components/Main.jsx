@@ -4,9 +4,10 @@ import React, {Component} from 'react';
 import AllStudents from './AllStudents';
 import AllCampuses from './AllCampuses';
 import SingleCampus from './SingleCampus';
-import { Route } from 'react-router-dom';
-import { fetchCampuses } from '../Store/campusStore';
-import { fetchStudents } from '../Store/studentStore';
+import CreateStudent from './CreateStudent';
+import { Route, Switch } from 'react-router-dom';
+import { fetchCampuses } from '../reducers/campusReducer';
+import { fetchStudents } from '../reducers/studentReducer';
 import store from '../store';
 import Navbar from './Navbar';
 
@@ -24,9 +25,12 @@ class Main extends Component {
     return (
       <div>
         <Navbar />
-        <Route exact path="/" component={AllCampuses} />
-        <Route path="/campuses/:campusId" component={SingleCampus} />
-        <Route path="/students" component={AllStudents} />
+        <Switch>
+          <Route exact path="/" component={AllCampuses} />
+          <Route path="/campuses/:campusId" component={SingleCampus} />
+          <Route exact path="/students" component={AllStudents} />
+          <Route path="/students/add" component={CreateStudent} />
+        </Switch>
       </div>
     );
   }
