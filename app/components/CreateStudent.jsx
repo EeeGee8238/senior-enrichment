@@ -19,7 +19,6 @@ class CreateStudent extends Component {
   }
 
   handleStudentChange (event) {
-    console.log(postStudent)
     this.setState({
       studentInputValue: event.target.value
     });
@@ -72,8 +71,8 @@ class CreateStudent extends Component {
 const mapStateToProps = (state) => {
   return {
     campuses: state.campuses
-  }
-}
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -84,7 +83,7 @@ const mapDispatchToProps = (dispatch) => {
       const campusId = event.target.campus.value;
       dispatch(postStudent({ name, email, campusId }));
     }
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateStudent);

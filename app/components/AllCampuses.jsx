@@ -8,7 +8,10 @@ import { connect } from 'react-redux';
 function AllCampuses(props) {
   return (
     <div>
-      <ul>
+      <Link to={'/campus/add'}>
+        <button type="button">Add Campus</button>
+      </Link>
+    <ul>
         {
           props.campuses && props.campuses.map(campus =>
             (

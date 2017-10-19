@@ -5,6 +5,7 @@ import AllStudents from './AllStudents';
 import AllCampuses from './AllCampuses';
 import SingleCampus from './SingleCampus';
 import CreateStudent from './CreateStudent';
+import CreateCampus from './CreateCampus'
 import { Route, Switch } from 'react-router-dom';
 import { fetchCampuses } from '../reducers/campusReducer';
 import { fetchStudents } from '../reducers/studentReducer';
@@ -30,6 +31,7 @@ class Main extends Component {
           <Route path="/campuses/:campusId" component={SingleCampus} />
           <Route exact path="/students" component={AllStudents} />
           <Route path="/students/add" component={CreateStudent} />
+          <Route path="/campus/add" component={CreateCampus} />
         </Switch>
       </div>
     );

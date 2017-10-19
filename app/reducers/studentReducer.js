@@ -1,3 +1,5 @@
+'use strict';
+
 import axios from 'axios';
 
 
@@ -11,7 +13,7 @@ export function getStudents(students) {
 }
 
 export function addStudent(newStudent) {
-  return {type: ADD_STUDENT, newStudent}
+  return {type: ADD_STUDENT, newStudent};
 }
 
 //THUNK CREATORS
@@ -40,11 +42,11 @@ export function postStudent(newStudent) {
 //REDUCER
 export default function reducer (state = [], action) {
   switch (action.type) {
+
     case GET_STUDENTS:
       return action.students;
 
     case ADD_STUDENT:
-
       return [...state, action.newStudent];
 
   default:
