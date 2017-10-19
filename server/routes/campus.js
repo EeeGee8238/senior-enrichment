@@ -13,7 +13,7 @@ campusRouter.get('/', (req, res, next) => {
 });
 
 campusRouter.param('campusId', (req, res, next, id) => {
-  Campus.findById(id)
+  Campus.findById(id) // consider default scope or include here for getting students that are associated with this campus (INSTEAD OF include on students)
   .then(requestedCampus => {
     if (!requestedCampus) {
       const err = new Error('Not Found');

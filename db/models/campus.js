@@ -1,5 +1,4 @@
 'use strict';
-const Student = require ('./student');
 
 const Sequelize = require('sequelize');
 const db = require('../index.js');
@@ -8,14 +7,16 @@ const Campus = db.define('campus', {
   name: {
     type: Sequelize.STRING,
     allowNull: false,
-    validate: {
-      isUnique: true
-    }
+    unique: true
   },
   image: {
     type: Sequelize.STRING
   }
 });
+
+module.exports = Campus;
+
+const Student = require('./student');
 
 Campus.addHook('beforeDestroy', 'removal', (selectedCampus) => {
   return Student.destroy({
@@ -25,5 +26,3 @@ Campus.addHook('beforeDestroy', 'removal', (selectedCampus) => {
   })
   .catch((error) => console.error(error));
 });
-
-module.exports = Campus;

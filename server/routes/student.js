@@ -1,7 +1,7 @@
 'use strict';
 
 const studentRouter = require('express').Router();
-const Student = require('../../db/models/campus');
+const Student = require('../../db/models/student');
 const Campus = require('../../db/models/campus');
 
 module.exports = studentRouter;
@@ -31,17 +31,10 @@ studentRouter.get('/:studentId', (req, res, next) => {
 });
 
 studentRouter.post('/', (req, res, next) => {
- Campus.findOne(
-   {where:
-    {campusId: req.body.campusId}})
-  .then(campus => {
-    return Student.create(req.body)
-  .then(student => {
-    return student.setCampus(campus);
-  });
-})
-.then(student => res.status(201).json(student))
-.catch(next);
+  Student.create(req.body)
+    .then(createdStudent => createdStudent.setCampus(req.body.campusId))
+    .then(createdStudent => res.status(201).json(createdStudent))
+    .catch(next);
 });
 
 studentRouter.put('/:studentId', (req, res, next) => {
