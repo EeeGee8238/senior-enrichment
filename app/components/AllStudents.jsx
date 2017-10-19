@@ -9,8 +9,10 @@ function AllStudents(props) {
     <div>
       <div>
         <Link to={'/students/add'}>
-          <button type="button">+</button>
-          <h3>Click to add a student</h3>
+          <div>
+            <h3>Click to add a student</h3>
+            <button type="button">+</button>
+          </div>
         </Link>
       </div>
       <div>

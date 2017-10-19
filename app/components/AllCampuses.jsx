@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 function AllCampuses(props) {
   return (
     <div>
+      <h2>Available Campuses</h2>
       <Link to={'/campus/add'}>
         <button type="button">Add Campus</button>
       </Link>

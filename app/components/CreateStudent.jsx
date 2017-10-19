@@ -55,7 +55,7 @@ class CreateStudent extends Component {
             value={this.state.emailInputValue}
             placeholder="Student Email" />
           <h3>Select a Campus</h3>
-            <select name="campus" value={this.state.campusInputValue} onChange={this.handleCampusChange}>
+            <select name="campus" onChange={this.handleCampusChange}>
               <option value={1}>Cornell</option>
               <option value={2}>Scranton</option>
               <option value={2}>NYU</option>
