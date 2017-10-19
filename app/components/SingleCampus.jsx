@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 
 function SingleCampus(props) {
   const campusId = +props.match.params.campusId;
@@ -17,9 +19,16 @@ function SingleCampus(props) {
       <ol>
       {
         selectedStudents.map(student =>
-          (<li key={student.id}>{student.name}</li>)
-        )
-      }
+          (
+
+              <div key={student.id}>
+                <Link to={`/students/${student.id}`}>
+                  <li>{student.name}</li>
+                </Link>
+              </div>
+
+          )
+        )}
       </ol>
     </div>
   );
