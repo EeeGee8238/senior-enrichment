@@ -56,9 +56,11 @@ class CreateStudent extends Component {
             placeholder="Student Email" />
           <h3>Select a Campus</h3>
             <select name="campus" onChange={this.handleCampusChange}>
-              <option value={1}>Cornell</option>
-              <option value={2}>Scranton</option>
-              <option value={2}>NYU</option>
+              {
+                this.props.campuses.map(campus => {
+                  return (<option key={campus.id} value={campus.id}>{campus.name}</option>);
+                })
+              }
             </select>
         <button type="submit">Sumbit Student</button>
         </form>
