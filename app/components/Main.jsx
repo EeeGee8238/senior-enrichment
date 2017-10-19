@@ -29,11 +29,12 @@ class Main extends Component {
         <Navbar />
         <Switch>
           <Route exact path="/" component={AllCampuses} />
+          <Route path="/campus/add" component={CreateCampus} />
           <Route path="/campuses/:campusId" component={SingleCampus} />
-          <Route path="/students/:studentId" component={SingleStudent} />
           <Route exact path="/students" component={AllStudents} />
           <Route path="/students/add" component={CreateStudent} />
-          <Route path="/campus/add" component={CreateCampus} />
+          <Route path="/students/:studentId" component={SingleStudent} />
+
         </Switch>
       </div>
     );

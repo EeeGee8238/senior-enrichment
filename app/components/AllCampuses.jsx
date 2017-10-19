@@ -21,6 +21,7 @@ function AllCampuses(props) {
                   <li>{campus.name}</li>
                   <img className="campus-image" src={campus.image} />
                 </Link>
+                <button>X Delete {campus.name}</button>
               </div>
             )
           )
