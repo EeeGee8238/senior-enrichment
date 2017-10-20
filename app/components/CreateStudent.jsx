@@ -62,7 +62,7 @@ class CreateStudent extends Component {
                 })
               }
             </select>
-        <button type="submit">Sumbit Student</button>
+          <button type="submit">Sumbit Student</button>
         </form>
       </div>
     );

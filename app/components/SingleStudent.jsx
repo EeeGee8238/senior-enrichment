@@ -20,7 +20,6 @@ function SingleStudent(props) {
       </Link>
     </div>
   );
-
 }
 
 const mapStateToProps = (state) => {

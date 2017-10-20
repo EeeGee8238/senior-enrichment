@@ -20,15 +20,14 @@ function SingleCampus(props) {
       {
         selectedStudents.map(student =>
           (
-
-              <div key={student.id}>
-                <Link to={`/students/${student.id}`}>
-                  <li>{student.name}</li>
-                </Link>
-              </div>
-
+            <div key={student.id}>
+              <Link to={`/students/${student.id}`}>
+                <li>{student.name}</li>
+              </Link>
+            </div>
           )
-        )}
+        )
+      }
       </ol>
     </div>
   );

@@ -34,7 +34,6 @@ class Main extends Component {
           <Route exact path="/students" component={AllStudents} />
           <Route path="/students/add" component={CreateStudent} />
           <Route path="/students/:studentId" component={SingleStudent} />
-
         </Switch>
       </div>
     );

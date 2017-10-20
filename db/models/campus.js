@@ -18,11 +18,3 @@ module.exports = Campus;
 
 const Student = require('./student');
 
-// Campus.addHook('beforeDestroy', 'removal', (selectedCampus) => {
-//   return Student.destroy({
-//     where: {
-//       campusId: selectedCampus.id
-//     }
-//   })
-//   .catch((error) => console.error(error));
-// });

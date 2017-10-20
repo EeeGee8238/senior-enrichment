@@ -27,15 +27,14 @@ function AllStudents(props) {
                 <Link to={`/students/${student.id}`}>
                   <li>{student.name}<span>-------</span>{student.campus.name}</li>
                 </Link>
-                <button onClick={(event) => {props.destroyStudent(student.id);}}>X Delete {student.name}</button>
-
+                <button onClick={() => {props.destroyStudent(student.id);}}>X Delete {student.name}</button>
               </div>
             )
           )
         }
       </ol>
     </div>
-  )
+  );
 }
 
 

@@ -13,7 +13,7 @@ function AllCampuses(props) {
       <Link to={'/campus/add'}>
         <button type="button">Add Campus</button>
       </Link>
-    <ul>
+      <ul>
         {
           props.campuses && props.campuses.map(campus =>
             (
