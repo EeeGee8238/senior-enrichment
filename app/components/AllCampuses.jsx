@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { removeCampus } from '../reducers/campusReducer';
 
 
 function AllCampuses(props) {
@@ -21,7 +22,9 @@ function AllCampuses(props) {
                   <li>{campus.name}</li>
                   <img className="campus-image" src={campus.image} />
                 </Link>
-                <button>X Delete {campus.name}</button>
+                <button onClick={(event) =>
+                {props.destroyCampus(campus.id);}}
+                >X Delete {campus.name}</button>
               </div>
             )
           )
@@ -38,5 +41,13 @@ const mapStateToProps = (state) => {
   };
 };
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    destroyCampus: (campusId) => {
+      dispatch(removeCampus(campusId));
+    }
+  };
+};
 
-export default connect(mapStateToProps)(AllCampuses);
+
+export default connect(mapStateToProps, mapDispatchToProps)(AllCampuses);

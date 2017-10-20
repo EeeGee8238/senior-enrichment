@@ -9,15 +9,15 @@ const ADD_STUDENT = 'ADD_STUDENT';
 const DELETE_STUDENT = 'DELETE_STUDENT';
 
 //ACTION CREATORS
-export function getStudents(students) {
+function getStudents(students) {
   return {type: GET_STUDENTS, students};
 }
 
-export function addStudent(newStudent) {
+function addStudent(newStudent) {
   return {type: ADD_STUDENT, newStudent};
 }
 
-export function deleteStudent(studentId) {
+function deleteStudent(studentId) {
   return {type: DELETE_STUDENT, studentId};
 }
 

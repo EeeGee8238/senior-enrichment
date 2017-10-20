@@ -50,7 +50,7 @@ const mapDispatchToProps = (dispatch) => {
     destroyStudent: (studentId) => {
       dispatch(removeStudent(studentId));
     }
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(AllStudents);
